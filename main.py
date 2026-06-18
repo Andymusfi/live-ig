@@ -36,7 +36,7 @@ daftar_video = [
 
 # MASUKKAN STREAM KEY INSTAGRAM DI SINI (Ganti setiap mau Live)
 stream_url = "rtmps://edgetee-upload-cgk2-1.xx.fbcdn.net:443/rtmp/"
-stream_key = "18140325739558216?s_bl=1&s_fbp=sin2-2&s_ow=10&s_prp=cgk2-1&s_sw=0&s_tids=1&s_vt=ig&a=Ab4oSpqlRXszn72kX5r1rL0w"
+stream_key = "18050897372781178?s_bl=1&s_fbp=sin2-3&s_ow=10&s_prp=cgk2-1&s_sw=0&s_tids=1&s_vt=ig&a=Ab6tq44F6jpvv2Hm8BAuTAM5"
 
 gabungan = stream_url + stream_key if stream_url.endswith("/") else stream_url + "/" + stream_key
 
