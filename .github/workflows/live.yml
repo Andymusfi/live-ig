@@ -1,0 +1,31 @@
+name: IG Live Bot (Max 6 Jam)
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch: # Memunculkan tombol manual
+
+jobs:
+  streaming:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Ambil File
+      uses: actions/checkout@v3
+      
+    - name: Siapkan Mesin Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        
+    - name: Instal Mesin Video (FFmpeg)
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y ffmpeg
+        
+    - name: Instal Modul YT-DLP
+      run: |
+        pip install -r requirements.txt
+        
+    - name: JALANKAN LIVE IG SEKARANG!
+      run: python -u main.py
