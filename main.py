@@ -2,6 +2,25 @@ import subprocess
 import os
 import time
 import urllib.request
+import threading
+from http.server import BaseHTTPRequestHandler, HTTPServer
+
+# =======================================================
+# 0. DUMMY WEB SERVER (AGAR RENDER.COM GRATIS)
+# =======================================================
+class DummyHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header('Content-type', 'text/plain')
+        self.end_headers()
+        self.wfile.write(b"Bot IG Live Sedang Berjalan 24/7!")
+
+def run_dummy_server():
+    port = int(os.environ.get("PORT", 10000))
+    server = HTTPServer(('0.0.0.0', port), DummyHandler)
+    server.serve_forever()
+
+threading.Thread(target=run_dummy_server, daemon=True).start()
 
 # =======================================================
 # 1. KONFIGURASI
